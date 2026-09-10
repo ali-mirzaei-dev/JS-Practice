@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - Welcome Message</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Welcome Message</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Write a program that takes a first name and a last name, and prints them in a welcome greeting sentence.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            let firstName = prompt("Enter your first name");
+            let lastName = prompt("Enter your last name");
+
+            document.write("First Name : " + firstName + "&lt;br/&gt;");
+            document.write("Last Name : " + lastName + "&lt;br/&gt;&lt;br/&gt;");
+
+            document.write("- Welcome to my JS practice page " + firstName + " " + lastName + " !");
+        </code>
+    </pre>
+
+    <script>
+        let firstName = prompt("Enter your first name");
+        let lastName = prompt("Enter your last name");
+
+        document.write("<h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// The Output</h2>");
+        
+        document.write("<div class='bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg'>");
+        document.write("First Name : " + firstName + "<br/>");
+        document.write("Last Name : " + lastName + "<br/><br/>");
+        document.write("- Welcome to my JS practice page " + firstName + " " + lastName + " !");
+        document.write("</div>");
+    </script>
+
+</body>
+
+</html>
