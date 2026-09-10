@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Sum & Average</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-8'>Sum & Average</h1>
+
+    <div class="mb-10">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+        <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5">
+
+            x = +prompt("Please enter your first number");
+            y = +prompt("Please enter your second number");
+
+            sum = x + y;
+            mean = (x + y) / 2;
+
+            document.write("First Number: " + x + "&lt;br&gt;");
+            document.write("Second Number: " + y + "&lt;br&gt;&lt;br&gt;");
+
+            document.write("Sum is: " + sum + "&lt;br&gt;&lt;br&gt;");
+            document.write("Mean is: " + mean);
+        </pre>
+    </div>
+
+
+    <script>
+        x = +prompt("Please enter your first number");
+        y = +prompt("Please enter your second number");
+
+        sum = x + y;
+        mean = (x + y) / 2;
+
+        document.write("<div class='bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg'>");
+
+
+        document.write("First Number: " + x + "<br>");
+        document.write("Second Number: " + y + "<br><br>");
+        document.write("Sum is: " + sum + "<br><br>");
+        document.write("Mean is: " + mean);
+
+
+        document.write("</div>");
+    </script>
+
+</body>
+
+</html>
