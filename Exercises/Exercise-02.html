@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01 - Sum & Average</title>
+    <title>02 - Variable Swap</title>
     <link rel="stylesheet" href="../assets/StyleSheet/output.css">
 </head>
 
@@ -13,46 +13,50 @@
     <a href="../index.html" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
     <br><br>
 
-    <h1 class='font-display text-4xl text-white mb-12'>Sum & Average</h1>
+    <h1 class='font-display text-4xl text-white mb-12'>Variable Swap</h1>
 
     <div class="mb-12 max-w-2xl">
         <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
         <p class="text-lg text-text-secondary leading-relaxed">
-            Write a program that takes two numbers from the user and displays their sum and average.
+            Write a program that takes two numbers from the user and swaps their values.
         </p>
     </div>
 
     <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
     <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
         <code>          
-            x = +prompt("Please enter your first number");
-            y = +prompt("Please enter your second number");
+            let x1 = +prompt("Please enter your first number");
+            let x2 = +prompt("Please enter your second number");
 
-            sum = x + y;
-            mean = (x + y) / 2;
+            document.write("Your first number (x1) is: " + x1 + "&lt;br/&gt;");
+            document.write("Your second number (x2) is: " + x2 + "&lt;br/&gt;&lt;br/&gt;");
 
-            document.write("First Number: " + x + "&lt;br&gt;");
-            document.write("Second Number: " + y + "&lt;br&gt;&lt;br&gt;");
-            document.write("Sum is: " + sum + "&lt;br&gt;&lt;br&gt;");
-            document.write("Mean is: " + mean);
+            let z = x1; 
+            x1 = x2; 
+            x2 = z;
+
+            document.write("x1 after swap: " + x1 + "&lt;br/&gt;");
+            document.write("x2 after swap: " + x2 + "&lt;br/&gt;");
         </code>
     </pre>
 
     <script>
-        x = +prompt("Please enter your first number");
-        y = +prompt("Please enter your second number");
-
-        sum = x + y;
-        mean = (x + y) / 2;
+        let x1 = +prompt("Please enter your first number");
+        let x2 = +prompt("Please enter your second number");
 
         document.write("<h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// The Output</h2>");
-        
         document.write("<div class='bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg'>");
-        document.write("First Number: " + x + "<br>");
-        document.write("Second Number: " + y + "<br><br>");
-        document.write("- Sum is: " + sum + "<br><br>");
-        document.write("- Mean is: " + mean);
-        
+
+        document.write("Your first number (x1) was: " + x1 + "<br/>");
+        document.write("Your second number (x2) was: " + x2 + "<br/><br/>");
+
+        let z = x1;
+        x1 = x2;
+        x2 = z;
+
+        document.write("- x1 after swap: " + x1 + "<br/>");
+        document.write("- x2 after swap: " + x2 + "<br/>");
+
         document.write("</div>");
     </script>
 
