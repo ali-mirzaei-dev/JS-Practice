@@ -36,13 +36,12 @@
             }
         </code>
     </pre>
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// The Output</h2>
 
     <script>
-        const x = +prompt("Enter your number");
-
-        document.write("<h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// The Output</h2>");
-        
         document.write("<div class='bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg'>");
+
+        const x = +prompt("Enter your number");
         document.write("Your number is " + x + "<br/><br/>");
 
         if (x % 2 == 0) {
@@ -50,7 +49,7 @@
         } else {
             document.write("- your number is odd");
         }
-        
+
         document.write("</div>");
     </script>
 
