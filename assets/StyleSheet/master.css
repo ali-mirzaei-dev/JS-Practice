@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #F2F2F2;
+    --bg-secondary: #111111;
+    --accent: #FF2D8F;
+    --text-secondary: #6E6E6E;
+    --border-soft: rgba(17,17,17,0.15);
+    --hero-grid-line: rgba(255,255,255,0.05);
+    --footer-border: rgba(255,255,255,0.1);
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../Font/font/Montserrat-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--bg-secondary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Montserrat', sans-serif; font-weight: 900; }
+  .font-mono { font-family: 'IBM Plex Mono', monospace; }
+  .font-hand { font-family: 'Caveat', cursive; }
+
+  .text-accent { color: var(--accent); }
+  .hover\:text-accent:hover { color: var(--accent); }
+  .text-bg-secondary { color: var(--bg-secondary); }
+  .text-text-secondary { color: var(--text-secondary); }
+
+  .bg-bg-primary { background-color: var(--bg-primary); }
+  .bg-bg-secondary { background-color: var(--bg-secondary); }
+  .bg-accent { background-color: var(--accent); }
+
+  .border-bg-secondary { border-color: var(--bg-secondary); }
+  .border-border-soft { border-color: var(--border-soft); }
+  .border-accent { border-color: var(--accent); }
+  .hover\:border-accent:hover { border-color: var(--accent); }
+
+  .grid-cell-line { border-color: var(--hero-grid-line); }
+  .grid-cell-pink { background-color: var(--accent); }
+
+  .bg-footer-dark { background-color: var(--bg-secondary); }
+  .border-footer-dark { border-color: var(--footer-border); }
+}
+
+@layer components {
+  
+  .polaroid {
+    transition: rotate 600ms cubic-bezier(.16, 1, .3, 1), scale 600ms cubic-bezier(.16, 1, .3, 1), z-index 0ms 0ms, box-shadow 600ms ease;
+  }
+
+  /* .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: revealFade 1.2s cubic-bezier(.22, 1, .36, 1) forwards;
+  } */
+  .reveal-1 { animation-delay: 0.2s; }
+  .reveal-2 { animation-delay: 0.4s; }
+  .reveal-3 { animation-delay: 0.6s; }
+  .reveal-4 { animation-delay: 0.8s; }
+  .reveal-5 { animation-delay: 1.0s; }
+
+  @keyframes revealFade {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
