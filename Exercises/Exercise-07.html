@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 - Sum Under 100</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Sum Under 100</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Write a program that adds all numbers 100 to 0 together and prints the final answer.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            let sum = 0;
+
+            for (let i = 100; i > 0; i = i - 1) {
+                sum = sum + i;
+            }
+            
+            document.write(sum);
+        </code>
+    </pre>
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// The Output</h2>
+
+    <script>
+        document.write("<div class='bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg'>");
+
+        let sum = 0;
+
+        for (let i = 100; i > 0; i = i - 1) {
+            sum = sum + i;
+        }
+        
+        document.write("- Total Sum: " + sum);
+        
+        document.write("</div>");
+    </script>
+
+</body>
+
+</html>
