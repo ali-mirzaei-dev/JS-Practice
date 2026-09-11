@@ -7,6 +7,7 @@ Each exercise focuses on a specific **JavaScript operator, logic structure, or s
 ## Table of Contents
 
 - [Demo](#demo)
+- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Author](#author)
@@ -14,6 +15,18 @@ Each exercise focuses on a specific **JavaScript operator, logic structure, or s
 ## Demo
 
 [Live Demo](https://ali-mirzaei-dev.github.io/JS-Practice/)
+
+## Screenshots
+
+
+**Homepage & Hero Section:**
+![Homepage](assets/Images/HERO.png)
+
+**Exercises Index:**
+![Exercises](assets/Images/EXERCISES.png)
+
+**Practice Page (Terminal Output):**
+![Practice Page](assets/Images/practice-page.png)
 
 ## Tech Stack
 
@@ -29,18 +42,17 @@ Each exercise focuses on a specific **JavaScript operator, logic structure, or s
 ```text
 JS-Practice/
 │
-├── 01- Sum
+├── Exercises/
+│   ├── Exercise-01/
+│   ├── Exercise-02/
+│   ├── ...
 │
-├── 02- Subtraction
-│
-├── 03- Multiplication
-│
-├── 04- ...
+|
 │
 ├── assets/
-│
-│
-│
+│   ├── Font/
+│   ├── Images/
+│   └── StyleSheet/
 │
 └── index.html
 ```
@@ -52,4 +64,4 @@ JS-Practice/
 - [GitHub](https://github.com/ali-mirzaei-dev)
 - [LinkedIn](https://www.linkedin.com/in/ali-mirzaei-dev/)
 - [Instagram](https://instagram.com/ali.mirzaei.dev)
-- ali.mirzaei.kt@gmail.com
+- [ali.mirzaei.kt@gmail.com](mailto:ali.mirzaei.kt@gmail.com)
