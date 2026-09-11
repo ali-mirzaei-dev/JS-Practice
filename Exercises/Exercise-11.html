@@ -4,26 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="assets/StyleSheet/public.css">
-    <link rel="stylesheet" href="assets/StyleSheet/master.css">
-
+    <title>11 - Number Block Printer</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
 </head>
 
-<body>
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Number Block Printer</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Write a program that uses a nested loop to print a block of numbers. The outer loop counts the rows (1 to 5). The inner loop prints the current row number 3 times on the same line.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            for (let i = 1; i &lt;= 5; i = i + 1) {
+
+                let c = "";
+                for (let n = 1; n &lt;= 3; n = n + 1) {
+                    c = c + i + " ";
+                }
+                document.write(c + "&lt;br/&gt;");
+            }
+        </code>
+    </pre>
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// The Output</h2>
+
+    <script>
+        document.write("<div class='bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg'>");
+        
+        for (let i = 1; i <= 5; i = i + 1) {
+            let c = "";
+            for (let n = 1; n <= 3; n = n + 1) {
+                c = c + i + " ";
+            }
+            document.write(c + "<br/>");
+        }
+        
+        document.write("</div>");
+    </script>
 
 </body>
-<script>
-    
 
-
-
-
-
-
-
-
-    
-</script>
 </html>
