@@ -18,13 +18,18 @@ Each exercise focuses on a specific **JavaScript operator, logic structure, or s
 
 ## Screenshots
 
-
 **Homepage & Hero Section:**
-Homepage & Hero Section:![Homepage](assets/Images/HERO.png =600x)
+<img src="assets/Images/HERO.png" width="600" alt="Homepage">
 
-Exercises Index:![Exercises](assets/Images/EXERCISES.png =600x)
+<br>
 
-Practice Page (Terminal Output):![Practice Page](assets/Images/practice-page.png =600x)
+**Exercises Index:**
+<img src="assets/Images/EXERCISES.png" width="600" alt="Exercises">
+
+<br>
+
+**Practice Page (Terminal Output):**
+<img src="assets/Images/practice-page.png" width="600" alt="Practice Page">
 
 ## Tech Stack
 
@@ -44,8 +49,6 @@ JS-Practice/
 │   ├── Exercise-01/
 │   ├── Exercise-02/
 │   ├── ...
-│
-|
 │
 ├── assets/
 │   ├── Font/
