@@ -19,16 +19,19 @@ Each exercise focuses on a specific **JavaScript operator, logic structure, or s
 ## Screenshots
 
 **Homepage & Hero Section:**
+<br>
 <img src="assets/Images/HERO.png" width="600" alt="Homepage">
 
 <br>
 
 **Exercises Index:**
+<br>
 <img src="assets/Images/EXERCISES.png" width="600" alt="Exercises">
 
 <br>
 
 **Practice Page (Terminal Output):**
+<br>
 <img src="assets/Images/practice-page.png" width="600" alt="Practice Page">
 
 ## Tech Stack
