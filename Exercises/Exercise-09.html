@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 - Circle Calculator</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Circle Calculator</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Write a program that asks the user for the radius of a circle, then calculates and prints the Diameter, Circumference, and Area.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            const r = +prompt("Enter your circle radius");
+
+            const diameter = 2 * r;
+            const circumference = 2 * 3.14 * r;
+            const area = 3.14 * (r * r);
+
+            document.write("- Diameter → " + diameter + "&lt;br/&gt;");
+            document.write("- Circumference → " + circumference + "&lt;br/&gt;");
+            document.write("- Area → " + area + "&lt;br/&gt;");
+        </code>
+    </pre>
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// The Output</h2>
+
+    <script>
+        document.write("<div class='bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg'>");
+
+        const r = +prompt("Enter your circle radius");
+
+        const diameter = 2 * r;
+        const circumference = 2 * 3.14 * r;
+        const area = 3.14 * (r * r);
+
+        document.write("- Diameter → " + diameter + "<br/>");
+        document.write("- Circumference → " + circumference + "<br/>");
+        document.write("- Area → " + area + "<br/>");
+        
+        document.write("</div>");
+    </script>
+
+</body>
+
+</html>
