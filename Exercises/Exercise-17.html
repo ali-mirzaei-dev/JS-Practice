@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17 - FAQ Accordion</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>FAQ Accordion</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Create a Frequently Asked Questions component. When a button is clicked, toggle the visibility of the answer paragraph and change the button's text.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            function show(element) {
+                let myP = element.parentElement.querySelector("p");
+
+                if (element.innerText == "Show Answer") {
+                    element.innerText = "Hide Answer";
+                } else {
+                    element.innerText = "Show Answer";
+                }
+
+                if (myP.style.display == "flex") {
+                    myP.style.display = "none";
+                } else {
+                    myP.style.display = "flex";
+                }
+            }
+        </code>
+    </pre>
+
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// Live Output</h2>
+
+    <div class="bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg">
+        <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
+            
+            <div class="bg-white/5 border border-white/10 p-5 rounded-lg">
+                <h3 class="text-xl text-accent font-bold mb-3">How does JS select elements?</h3>
+                <p class="text-text-secondary text-sm hidden">Using querySelector and getElementById!</p>
+                <button onclick="show(this)" class="mt-4 bg-white/10 text-white px-4 py-1.5 rounded-md text-sm hover:bg-accent transition-colors">Show Answer</button>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-5 rounded-lg">
+                <h3 class="text-xl text-accent font-bold mb-3">Why use classList?</h3>
+                <p class="text-text-secondary text-sm hidden">It makes toggling themes incredibly easy and clean.</p>
+                <button onclick="show(this)" class="mt-4 bg-white/10 text-white px-4 py-1.5 rounded-md text-sm hover:bg-accent transition-colors">Show Answer</button>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-5 rounded-lg">
+                <h3 class="text-xl text-accent font-bold mb-3">What is the DOM?</h3>
+                <p class="text-text-secondary text-sm hidden">The Document Object Model, the bridge between HTML and JS.</p>
+                <button onclick="show(this)" class="mt-4 bg-white/10 text-white px-4 py-1.5 rounded-md text-sm hover:bg-accent transition-colors">Show Answer</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function show(element) {
+            let myP = element.parentElement.querySelector("p");
+
+            if (element.innerText == "Show Answer") {
+                element.innerText = "Hide Answer";
+            } else {
+                element.innerText = "Show Answer";
+            }
+
+            if (myP.style.display == "flex") {
+                myP.style.display = "none";
+            } else {
+                myP.style.display = "flex";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
