@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 - Magic Text Changer</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Magic Text Changer</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Create an h1 and a button. When the button is clicked, use JS to change the h1's text, text color, and background color.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            const myId = document.getElementById("myText");
+
+            function swap() {
+                myId.innerText = "I am a Frontend Developer!";
+                myId.style.color = "#FF2D8F";
+                myId.style.backgroundColor = "black";
+            }
+        </code>
+    </pre>
+
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// Live Output</h2>
+    
+    <div class="bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg">
+        <h3 id="myText" class="text-2xl text-white w-fit pr-2.5 pl-1 mb-6">Hello World</h3>
+        <button onclick="swap()" id="myButton" class="bg-accent text-white px-4 py-2 rounded-md hover:bg-white hover:text-black transition-all">Click Me</button>
+    </div>
+
+    <script>
+        const myId = document.getElementById("myText");
+
+        function swap() {
+            myId.innerText = "I am a Frontend Developer!";
+            myId.style.color = "#FF2D8F";
+            myId.style.backgroundColor = "black";
+        }
+    </script>
+
+</body>
+
+</html>
