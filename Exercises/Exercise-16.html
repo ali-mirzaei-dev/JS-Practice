@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16 - Dynamic Card Builder</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Dynamic Card Builder</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Create an empty div and a button. Every time the button is clicked, use .innerHTML to inject a new HTML card into the div. Add a close button to remove the card.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            const myId = document.getElementById("myDiv");
+
+            function contentAdd() {
+                let card = "&lt;div class='bg-white/5 border border-white/10 p-5 rounded-lg flex justify-between items-center'&gt;";
+                card += "&lt;div&gt;";
+                card += "&lt;h3 class='text-xl text-accent font-bold mb-2'&gt;New Card&lt;/h3&gt;";
+                card += "&lt;p class='text-text-secondary text-sm'&gt;Generated dynamically via JS!&lt;/p&gt;";
+                card += "&lt;/div&gt;";
+                card += "&lt;button onclick='closer(this)' class='px-2.5 py-1 text-xs text-red-400 bg-red-500/20 border border-red-500/40
+                 rounded hover:bg-red-500 hover:text-white transition-colors'&gt;Close&lt;/button&gt;";
+                card += "&lt;/div&gt;";
+
+                myId.innerHTML += card;
+            }
+
+            function closer(element) {
+                element.parentElement.remove();
+            }
+        </code>
+    </pre>
+
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// Live Output</h2>
+
+    <div class="bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg">
+        <div id="myDiv" class="flex flex-col gap-4 w-full">
+            <!-- Cards will be injected here -->
+        </div>
+        <button onclick="contentAdd()" class="mt-6 bg-accent text-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition-all font-bold">
+            Click to Add Card
+        </button>
+    </div>
+
+    <script>
+        const myId = document.getElementById("myDiv");
+
+        function contentAdd() {
+            let card = "<div class='bg-white/5 border border-white/10 p-5 rounded-lg flex justify-between items-center'>";
+            card += "<div>";
+            card += "<h3 class='text-xl text-accent font-bold mb-2'>New Card</h3>";
+            card += "<p class='text-text-secondary text-sm'>Generated dynamically via JS!</p>";
+            card += "</div>";
+            // Shortened classes and used transition-colors to fix the flicker
+            card += "<button onclick='closer(this)' class='px-2.5 py-1 text-xs text-red-400 bg-red-500/20 border border-red-500/40 rounded hover:bg-red-500 hover:text-white transition-colors'>Close</button>";
+            card += "</div>";
+
+            myId.innerHTML += card;
+        }
+
+        function closer(element) {
+            element.parentElement.remove();
+        }
+    </script>
+
+</body>
+
+</html>
