@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 - Dark/Light Mode Toggle</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+    <style>
+        .darkTheme {
+            background-color: rgb(6, 6, 41);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Dark/Light Mode Toggle</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Create a div and a button. When the button is clicked, use a function to check if the div has the "darkTheme" class. If it does, remove it. If it doesn't, add it.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            let myId = document.querySelector("#myDiv");
+
+            function themeSwap() {
+                if (myId.classList.contains("darkTheme")) {
+                    myId.classList.remove("darkTheme");
+                } else {
+                    myId.classList.add("darkTheme");
+                }
+            }
+        </code>
+    </pre>
+
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// Live Output</h2>
+    
+    <div class="bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg">
+        <div id="myDiv" class="p-4 rounded-lg transition-all duration-300 bg-white/10">
+            <h3 class="text-xl font-bold mb-3">Dark Mode UI</h3>
+            <p class="mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti possimus, id qui debitis officia magni?</p>
+            <p class="mb-4">Lorem ipsum dolor sit amet.</p>
+            <button onclick="themeSwap()" class="bg-accent text-white px-4 py-2 rounded-md hover:bg-white hover:text-black transition-all">Toggle Theme</button>
+        </div>
+    </div>
+
+    <script>
+        let myId = document.querySelector("#myDiv");
+
+        function themeSwap() {
+            if (myId.classList.contains("darkTheme")) {
+                myId.classList.remove("darkTheme");
+            } else {
+                myId.classList.add("darkTheme");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
