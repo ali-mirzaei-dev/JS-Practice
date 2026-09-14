@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19 - Grade Calculator</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Grade Calculator</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Create an input field and a calculate button. When clicked, read the input value and use if/else if/else to print a letter grade (A-F) into an empty div based on the number.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div>
+            <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+            <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 h-full">
+                <code>          
+                const myBtn = document.querySelector("form>button");
+                const myOutPut = document.getElementById("outPut");
+
+                function gridCalc(element) {
+                    element.preventDefault();
+
+                    let score = element.target.parentElement.querySelector("input").value;
+
+                    if (score &gt;= 90 &amp;&amp; score &lt;= 100) {
+                        myOutPut.innerHTML = "&lt;h1&gt;You got an A&lt;/h1&gt;";
+                        myOutPut.style.border = "2px solid lime";
+                    } else if (score &gt;= 80 &amp;&amp; score &lt; 90) {
+                        myOutPut.innerHTML = "&lt;h1&gt;You got a B&lt;/h1&gt;";
+                        myOutPut.style.border = "2px solid blue";
+                    } else if (score &gt;= 70 &amp;&amp; score &lt; 80) {
+                        myOutPut.innerHTML = "&lt;h1&gt;You got a C&lt;/h1&gt;";
+                        myOutPut.style.border = "2px solid yellow";
+                    } else if (score &gt;= 60 &amp;&amp; score &lt; 70) {
+                        myOutPut.innerHTML = "&lt;h1&gt;You got a D&lt;/h1&gt;";
+                        myOutPut.style.border = "2px solid orange";
+                    } else if (score &gt;= 0 &amp;&amp; score &lt; 60) {
+                        myOutPut.innerHTML = "&lt;h1&gt;You got an F&lt;/h1&gt;";
+                        myOutPut.style.border = "2px solid maroon";
+                    } else {
+                        myOutPut.innerHTML = "&lt;h1&gt;Please enter a valid score&lt;/h1&gt;";
+                        myOutPut.style.border = "2px solid red";
+                    }
+                }
+                </code>
+            </pre>
+        </div>
+
+        <div>
+            <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// Live Output</h2>
+
+            <div class="bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg flex flex-col items-center gap-6 h-full">
+                <form action="" class="flex flex-col gap-4 w-full max-w-xs">
+                    <label for="scoreInput" class="text-sm text-text-secondary uppercase tracking-wider">Please enter your score (0-100)</label>
+                    <input id="scoreInput" min="0" max="100" type="number" class="bg-white/5 border border-white/10 rounded-md p-2 text-white focus:outline-none focus:border-accent transition-colors">
+                    <button onclick="gridCalc(event)" class="mt-2 bg-accent text-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition-all font-bold uppercase tracking-wider">Calculate</button>
+                </form>
+
+                <div id="outPut" class="w-full h-37.5 flex items-center justify-center border-2 border-white/10 rounded-md text-center text-xl font-display font-black text-text-secondary">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const myBtn = document.querySelector("form>button");
+        const myOutPut = document.getElementById("outPut");
+
+        function gridCalc(element) {
+            element.preventDefault();
+
+            let score = element.target.parentElement.querySelector("input").value;
+
+            if (score >= 90 && score <= 100) {
+                myOutPut.innerHTML = "<h1>You got an A</h1>";
+                myOutPut.style.border = "2px solid lime";
+            } else if (score >= 80 && score < 90) {
+                myOutPut.innerHTML = "<h1>You got a B</h1>";
+                myOutPut.style.border = "2px solid blue";
+            } else if (score >= 70 && score < 80) {
+                myOutPut.innerHTML = "<h1>You got a C</h1>";
+                myOutPut.style.border = "2px solid yellow";
+            } else if (score >= 60 && score < 70) {
+                myOutPut.innerHTML = "<h1>You got a D</h1>";
+                myOutPut.style.border = "2px solid orange";
+            } else if (score >= 0 && score < 60) {
+                myOutPut.innerHTML = "<h1>You got an F</h1>";
+                myOutPut.style.border = "2px solid maroon";
+            } else {
+                myOutPut.innerHTML = "<h1>Please enter a valid score</h1>";
+                myOutPut.style.border = "2px solid red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
