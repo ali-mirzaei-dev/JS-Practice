@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 - The Highlighted List</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>The Highlighted List</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Create a list of items. When you click on an item, toggle its color between the accent pink and the primary background color using a function and the 'this' keyword.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            const myLi = document.querySelectorAll("li");
+
+            function Highlighter(element) {
+
+                if (element.style.color == "rgb(255, 45, 143)") {
+                    element.style.color = "#F2F2F2"; // Revert to default light grey
+                } else {
+                    element.style.color = "#FF2D8F"; // Turn to neon pink
+                }
+            }
+        </code>
+    </pre>
+
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// Live Output</h2>
+
+    <div class="bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg">
+        <ul class="space-y-2 cursor-pointer *:w-fit">
+            <li onclick="Highlighter(this)" class="text-xl text-[#F2F2F2] hover:translate-x-2 transition-transform">HTML</li>
+            <li onclick="Highlighter(this)" class="text-xl text-[#F2F2F2] hover:translate-x-2 transition-transform">CSS</li>
+            <li onclick="Highlighter(this)" class="text-xl text-[#F2F2F2] hover:translate-x-2 transition-transform">JS</li>
+            <li onclick="Highlighter(this)" class="text-xl text-[#F2F2F2] hover:translate-x-2 transition-transform">TAILWIND</li>
+        </ul>
+    </div>
+
+    <script>
+        const myLi = document.querySelectorAll("li");
+
+        function Highlighter(element) {
+
+            if (element.style.color == "rgb(255, 45, 143)") {
+                element.style.color = "#F2F2F2";
+            } else {
+                element.style.color = "#FF2D8F";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
