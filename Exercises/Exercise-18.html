@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 - Form Validator</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest">← Back to Index</a>
+    <br><br>
+
+    <h1 class='font-display text-4xl text-white mb-12'>Form Validator</h1>
+
+    <div class="mb-12 max-w-2xl">
+        <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Prompt</h2>
+        <p class="text-lg text-text-secondary leading-relaxed">
+            Create a form with 4 inputs and a submit button. When clicked, loop through the inputs. If empty, turn border red. If filled, turn border green.
+        </p>
+    </div>
+
+    <h2 class="text-[11px] tracking-[0.2em] uppercase text-accent mb-4">// The Code</h2>
+    <pre class="bg-[#0d0d0d] p-6 rounded-lg text-sm text-text-secondary overflow-x-auto border border-white/5 mb-10">
+        <code>          
+            function regBtn(element) {
+                // Stop the form from refreshing the page first!
+                element.preventDefault();
+
+                // Grab all inputs inside the form
+                let myInputs = element.target.parentElement.querySelectorAll("input");
+
+                for (let i = 0; i &lt; myInputs.length; i++) {
+                    if (myInputs[i].value == "") {
+                        myInputs[i].style.border = "2px solid maroon";
+                    } else {
+                        myInputs[i].style.border = "2px solid lime";
+                    }
+                }
+            }
+        </code>
+    </pre>
+
+    <h2 class='text-[11px] tracking-[0.2em] uppercase text-accent mb-4'>// Live Output</h2>
+
+    <div class="bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg">
+        <form action="" method="get" class="flex flex-col gap-4 max-w-md mx-auto">
+
+            <div class="flex flex-col gap-1">
+                <label for="i1" class="text-sm text-text-secondary uppercase tracking-wider">First Name</label>
+                <input id="i1" type="text" class="bg-white/5 border border-white/10 rounded-md p-2 focus:outline-none focus:border-accent transition-colors">
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <label for="i2" class="text-sm text-text-secondary uppercase tracking-wider">Last Name</label>
+                <input id="i2" type="text" class="bg-white/5 border border-white/10 rounded-md p-2 focus:outline-none focus:border-accent transition-colors">
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <label for="i3" class="text-sm text-text-secondary uppercase tracking-wider">Email Address</label>
+                <input id="i3" type="text" class="bg-white/5 border border-white/10 rounded-md p-2 focus:outline-none focus:border-accent transition-colors">
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <label for="i4" class="text-sm text-text-secondary uppercase tracking-wider">GitHub Username</label>
+                <input id="i4" type="text" class="bg-white/5 border border-white/10 rounded-md p-2 focus:outline-none focus:border-accent transition-colors">
+            </div>
+
+            <button onclick="regBtn(event)" class="mt-4 bg-accent text-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition-all font-bold uppercase tracking-wider">
+                Register
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function regBtn(element) {
+
+            element.preventDefault();
+
+            const myInputs = element.target.parentElement.querySelectorAll("input");
+
+            for (let i = 0; i < myInputs.length; i++) {
+                if (myInputs[i].value == "") {
+                    myInputs[i].style.border = "2px solid maroon";
+                } else {
+                    myInputs[i].style.border = "2px solid lime";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
