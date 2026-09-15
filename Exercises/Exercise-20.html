@@ -99,11 +99,12 @@
     <script>
         function minusBtn(element) {
 
-            myInput = element.parentElement.querySelector(".inputClass")
-            myValue = myInput.value
+            const myInput = element.parentElement.querySelector(".inputClass")
+            const myValue = myInput.value
 
-            basePrice = element.parentElement.querySelector("div>span")
+            const basePrice = element.parentElement.querySelector("div>span")
 
+            let newValue;
 
             if (myValue > 1) {
                 newValue = myValue - 1
@@ -123,11 +124,12 @@
 
         function plusBtn(element) {
 
-            myInput = element.parentElement.querySelector(".inputClass")
-            myValue = myInput.value
+            const myInput = element.parentElement.querySelector(".inputClass")
+            const myValue = myInput.value
 
-            basePrice = element.parentElement.querySelector("div>span")
+            const basePrice = element.parentElement.querySelector("div>span")
 
+            let newValue;
 
             if (myValue < 10) {
                 newValue = +myValue + 1
@@ -144,7 +146,7 @@
             let newPrice = +basePrice.innerText * newValue
             priceOutput.innerText = newPrice
         }
-        
+
     </script>
 
 </body>
