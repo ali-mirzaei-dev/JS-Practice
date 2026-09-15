@@ -12,7 +12,7 @@
     <!-- npx @tailwindcss/cli -i ./assets/StyleSheet/master.css -o ./assets/StyleSheet/output.css --watch -->
 </head>
 
-<body class="font-sans text-text-primary scroll-smooth">
+<body class="font-sans text-text-primary">
 
     <!--==================#1 HEADER ==================-->
     <!--==============================================-->
@@ -145,10 +145,10 @@
                 <span class="font-mono text-[11px] tracking-[0.2em] uppercase mt-6 md:mt-0 text-text-secondary">Total Exercises: 20</span>
             </div>
 
-            <!--=======#2-3-2 ROW 1  =======-->
+            <!--=======#2-3-2 ROWS  =======-->
             <div class="w-full flex flex-col gap-4">
 
-                <!-- Accordion Category 1 -->
+                <!--===== Accordion Category 1 =====-->
                 <div class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent transition-colors">
 
                     <!-- text & button row -->
@@ -157,7 +157,7 @@
                             <h4 class="font-display font-black text-xl text-bg-secondary tracking-tight">Basic Algorithms</h4>
                             <span class="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Date: 10-11 Sep</span>
                         </div>
-                        <button onclick="showBtn(this)" class="cursor-pointer font-mono text-[10px] uppercase tracking-widest text-text-secondary hover:text-accent border border-text-secondary/30 hover:border-accent px-3 py-1.5 rounded-full transition-colors select-none">show</button>
+                        <button onclick="showBtn(this)" class="cursor-pointer font-mono text-[10px] uppercase tracking-widest text-text-secondary hover:text-accent border border-text-secondary/30 hover:border-accent px-7 py-1 rounded-full transition-colors select-none">show</button>
                     </div>
 
                     <!-- cards -->
@@ -242,7 +242,7 @@
                             </div>
                             <span class="font-mono text-[10px] uppercase tracking-widest text-text-secondary group-hover:text-accent transition-colors">View →</span>
                         </a>
-                        
+
                         <a href="Exercises/Exercise-11.html" class="w-full flex justify-between items-center p-2 md:p-3 border border-white/10 rounded-full hover:border-accent transition-colors group mt-3">
                             <div class="flex items-center gap-3">
                                 <span class="font-mono text-[10px] text-accent tracking-widest border border-accent/50 px-1.5 py-0.5 rounded">11</span>
@@ -261,7 +261,7 @@
                     </div>
                 </div>
 
-                <!-- Accordion Category 2 -->
+                <!--===== Accordion Category 2 =====-->
                 <div class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent transition-colors">
 
                     <!-- text & button row -->
@@ -270,15 +270,11 @@
                             <h4 class="font-display font-black text-xl text-bg-secondary tracking-tight">DOM Manipulation</h4>
                             <span class="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Date: 12-15 Sep</span>
                         </div>
-                        <button onclick="showBtn(this)" class="cursor-pointer font-mono text-[10px] uppercase tracking-widest text-text-secondary hover:text-accent border border-text-secondary/30 hover:border-accent px-3 py-1.5 rounded-full transition-colors select-none">
-                            show
-                        </button>
+                        <button onclick="showBtn(this)" class="cursor-pointer font-mono text-[10px] uppercase tracking-widest text-text-secondary hover:text-accent border border-text-secondary/30 hover:border-accent px-7 py-1 rounded-full transition-colors select-none">show</button>
                     </div>
 
                     <!-- cards -->
                     <div class="w-full flex max-h-0 overflow-hidden flex-wrap justify-between *:md:w-[48%] gap-y-1.5 md:gap-3 cardAc transition-all duration-300">
-
-
 
                         <a href="Exercises/Exercise-13.html" class="w-full flex justify-between items-center p-2 md:p-3 border border-white/10 rounded-full hover:border-accent transition-colors group">
                             <div class="flex items-center gap-3">
@@ -343,12 +339,9 @@
                             </div>
                             <span class="font-mono text-[10px] uppercase tracking-widest text-text-secondary group-hover:text-accent transition-colors">View →</span>
                         </a>
-
                     </div>
                 </div>
-
             </div>
-
         </section>
 
         <!--=====================#2-4 CONNECT =====================-->
@@ -412,8 +405,6 @@
 
     <script>
 
-
-
         function showBtn(element) {
 
             if (element.innerText.toLowerCase() == "show") {
@@ -425,15 +416,14 @@
             const mySamples = element.parentElement.parentElement.querySelector(".cardAc");
 
             if (mySamples.classList.contains("max-h-0")) {
-
                 mySamples.classList.remove("max-h-0");
-                mySamples.classList.add("max-h-125");
+                mySamples.classList.add("max-h-225");
             } else {
                 mySamples.classList.add("max-h-0");
-                mySamples.classList.remove("max-h-125");
+                mySamples.classList.remove("max-h-225");
             }
         }
-        // STOP HEEEEEEEEEREEEEEEEEEEEEE
+
     </script>
 </body>
 
