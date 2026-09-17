@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Image Carousel</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+
+    <style>
+        .active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10 min-h-screen flex flex-col items-center">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest border border-accent/50 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors mb-4 self-start">← Back to Index</a>
+
+    <header class="text-center">
+        <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-accent">// Mini Project 02</span>
+        <h1 class='font-display text-5xl md:text-7xl text-white mb-4 tracking-tight'>Image Carousel</h1>
+        <p class="text-text-secondary max-w-xl mx-auto">A looping vanilla JS slider. State tracked using a currentSlide variable and classList.</p>
+    </header>
+
+
+
+    <div class=" w-200 h-150 relative *:absolute *:w-70 *:h-110 *:top-1/2 *:left-1/2 *:-translate-x-1/2 *:-translate-y-1/2 *:duration-1000">
+
+        <figure class="slide opacity-0 active rounded-xl overflow-hidden shadow-2xl shadow-black/80 border border-white/10">
+            <img class="w-full h-full object-cover" src="../assets/Images/Slider1.jpeg" alt="Slide 1">
+        </figure>
+
+        <figure class="slide opacity-0 rounded-xl overflow-hidden shadow-2xl shadow-black/80 border border-white/10">
+            <img class="w-full h-full object-cover" src="../assets/Images/Slider2.jpeg" alt="Slide 2">
+        </figure>
+
+        <figure class="slide opacity-0 rounded-xl overflow-hidden shadow-2xl shadow-black/80 border border-white/10">
+            <img class="w-full h-full object-cover" src="../assets/Images/Slider3.jpeg" alt="Slide 3">
+        </figure>
+
+        <figure class="slide opacity-0 rounded-xl overflow-hidden shadow-2xl shadow-black/80 border border-white/10">
+            <img class="w-full h-full object-cover" src="../assets/Images/Slider4.jpeg" alt="Slide 4">
+        </figure>
+
+        <figure class="slide opacity-0 rounded-xl overflow-hidden shadow-2xl shadow-black/80 border border-white/10">
+            <img class="w-full h-full object-cover" src="../assets/Images/Slider5.jpeg" alt="Slide 5">
+        </figure>
+
+    </div>
+
+    <button onclick="rightBtn()" class="cursor-pointer bg-white/10 border border-white/10 backdrop-blur-md text-white px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-accent hover:border-accent transition-colors font-bold active:scale-95">
+        Next Slide →
+    </button>
+
+    <script>
+        const slides = document.querySelectorAll(".slide")
+        let onTop = document.querySelector(".active")
+
+        let currentSlide = 0
+
+        function rightBtn() {
+            onTop = document.querySelector(".active")
+
+            currentSlide++
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0
+            } else {
+            }
+
+            onTop.classList.remove("active")
+            slides[currentSlide].classList.add("active")
+        }
+    </script>
+
+</body>
+
+</html>

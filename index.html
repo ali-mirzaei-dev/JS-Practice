@@ -347,17 +347,17 @@
                     <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-accent">// The Index</span>
                     <h2 class="font-display text-5xl md:text-8xl leading-[0.8] tracking-[-0.04em] text-bg-secondary">Mini Projects</h2>
                 </div>
-                <span class="font-mono text-[11px] tracking-[0.2em] uppercase mt-6 md:mt-0 text-text-secondary">Total projects: 01</span>
+                <span class="font-mono text-[11px] tracking-[0.2em] uppercase mt-6 md:mt-0 text-text-secondary">Total projects: 02</span>
             </div>
 
             <!--=======#2-4-2 CARDS  =======-->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:ml-0 reveal reveal-4 ">
 
                 <!-- card 1 -->
-                <a href="Exercises/Mini-Project-01.html" class="flex gap-4 md:gap-6 bg-bg-primary p-6 rounded-lg border border-text-secondary/20 hover:border-accent *:duration-300 transition-colors group h-full">
+                <a href="Exercises/Mini-Project-01.html" class="flex gap-4 md:gap-6 bg-bg-primary p-6 rounded-lg border border-text-secondary/20 hover:border-accent **:duration-300  group h-full duration-300 hover:-translate-y-1">
 
                     <div class="shrink-0">
-                        <span class="font-display font-black text-3xl md:text-6xl text-text-secondary/30 group-hover:text-accent transition-colors tracking-tighter">01</span>
+                        <span class="font-display font-black text-3xl md:text-6xl text-text-secondary/30 group-hover:text-accent  tracking-tighter">01</span>
                     </div>
 
                     <div class="flex flex-col justify-between border-l border-text-secondary/20 pl-4 md:pl-6">
@@ -365,13 +365,27 @@
                             <h3 class="font-display font-black text-2xl text-bg-secondary tracking-tight mb-2">Storefront UI</h3>
                             <p class="text-sm text-text-secondary leading-relaxed hidden md:block">Dynamic product card with live quantity calculation.</p>
                         </div>
-                        <span class="font-mono text-[10px] uppercase tracking-widest text-text-secondary group-hover:text-accent transition-colors mt-4">Open Project →</span>
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-text-secondary group-hover:text-accent mt-4">Open Project →</span>
                     </div>
 
                 </a>
 
                 <!-- card 2 -->
+                <a href="Exercises/Mini-Project-02.html" class="flex gap-4 md:gap-6 bg-bg-primary p-6 rounded-lg border border-text-secondary/20 hover:border-accent **:duration-300  group h-full duration-300 hover:-translate-y-1">
 
+                    <div class="shrink-0">
+                        <span class="font-display font-black text-3xl md:text-6xl text-text-secondary/30 group-hover:text-accent tracking-tighter">02</span>
+                    </div>
+
+                    <div class="flex flex-col justify-between border-l border-text-secondary/20 pl-4 md:pl-6">
+                        <div>
+                            <h3 class="font-display font-black text-2xl text-bg-secondary tracking-tight mb-2">Image Carousel</h3>
+                            <p class="text-sm text-text-secondary leading-relaxed hidden md:block">A looping image slider built with state tracking and DOM class toggling.</p>
+                        </div>
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-text-secondary group-hover:text-accent mt-4">Open Project →</span>
+                    </div>
+
+                </a>
                 <!-- card 3 -->
 
                 <!-- card 4 -->
@@ -453,7 +467,7 @@
             }
 
             const mySamples = element.parentElement.parentElement.querySelector(".cardAc");
-            
+
             mySamples.classList.toggle("max-h-0")
         }
 
