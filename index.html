@@ -146,7 +146,7 @@
             </div>
 
             <!--=======#2-3-2 ROWS  =======-->
-            <div class="w-full flex flex-col gap-4">
+            <div class="w-full flex flex-col gap-4 reveal reveal-4">
 
                 <!--===== CATEGORY 1 =====-->
                 <div class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent transition-colors">
@@ -354,7 +354,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:ml-0 reveal reveal-4 ">
 
                 <!-- card 1 -->
-                <a href="Exercises/Exercise-20.html" class="flex gap-4 md:gap-6 bg-bg-primary p-6 rounded-lg border border-text-secondary/20 hover:border-accent *:duration-300 transition-colors group h-full">
+                <a href="Exercises/Mini-Project-01.html" class="flex gap-4 md:gap-6 bg-bg-primary p-6 rounded-lg border border-text-secondary/20 hover:border-accent *:duration-300 transition-colors group h-full">
 
                     <div class="shrink-0">
                         <span class="font-display font-black text-3xl md:text-6xl text-text-secondary/30 group-hover:text-accent transition-colors tracking-tighter">01</span>
@@ -453,14 +453,8 @@
             }
 
             const mySamples = element.parentElement.parentElement.querySelector(".cardAc");
-
-            if (mySamples.classList.contains("max-h-0")) {
-                mySamples.classList.remove("max-h-0");
-                mySamples.classList.add("max-h-225");
-            } else {
-                mySamples.classList.add("max-h-0");
-                mySamples.classList.remove("max-h-225");
-            }
+            
+            mySamples.classList.toggle("max-h-0")
         }
 
     </script>
