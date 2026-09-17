@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23 - Tip Calculator</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10 min-h-screen flex flex-col items-center">
+
+    <a href="../index.html#projects" class="text-accent text-sm uppercase tracking-widest border border-accent/50 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors mb-12 self-start">← Back to Index</a>
+
+    <header class="mb-16 text-center">
+        <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-accent">// Mini Project 03</span>
+        <h1 class='font-display text-5xl md:text-7xl text-white mb-4 tracking-tight'>Tip Calculator</h1>
+        <p class="text-text-secondary max-w-xl mx-auto">A utility to calculate tips and split bills based on service quality.</p>
+    </header>
+
+    <!-- Input Card -->
+    <div class="w-full max-w-md bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col gap-6 mb-6 shadow-lg shadow-black/50">
+
+        <div class="flex flex-col gap-2">
+            <label for="billAmount" class="text-xs uppercase tracking-widest text-text-secondary">Bill Amount ($)</label>
+            <input id="billAmount" placeholder="0.00" class="w-full bg-white/5 border border-white/10 rounded-md p-3 text-lg focus:outline-none focus:border-accent transition-colors" type="number">
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <label for="quality" class="text-xs uppercase tracking-widest text-text-secondary">Service Quality</label>
+            <select name="quality" id="quality" class="w-full bg-white/5 border border-white/10 rounded-md p-3 text-lg focus:outline-none focus:border-accent transition-colors">
+                <option value="10" class="bg-bg-secondary">Poor (10%)</option>
+                <option value="15" class="bg-bg-secondary">Good (15%)</option>
+                <option value="20" class="bg-bg-secondary">Excellent (20%)</option>
+            </select>
+        </div>
+
+        <button onclick="calcTip()" class="w-full bg-accent text-white py-3 rounded-md hover:bg-white hover:text-black transition-all font-bold uppercase tracking-widest text-sm active:scale-95">Calculate Tip</button>
+
+    </div>
+
+    <!-- Output Card -->
+    <div class="w-full max-w-md bg-[#1a1a1a] border-l-4 border-accent p-8 rounded-lg flex flex-col gap-4 shadow-lg shadow-black/50">
+
+        <h4 class="font-display font-black text-2xl text-white tracking-tight">Receipt Summary</h4>
+
+        <div class="flex justify-between items-center">
+            <span class="text-sm text-text-secondary uppercase tracking-wider">Tip Amount:</span>
+            <span class="text-xl font-bold text-accent">$<span id="totalTip">0.00</span></span>
+        </div>
+
+        <div class="flex justify-between items-center border-t border-white/10 pt-4">
+            <span class="text-sm text-white uppercase tracking-wider font-bold">Total to Pay:</span>
+            <span class="text-2xl font-display font-black text-white">$<span id="totalCost">0.00</span></span>
+        </div>
+
+    </div>
+
+    <script>
+
+
+        function calcTip() {
+
+            const billAmount = +document.getElementById("billAmount").value
+            const tipAmount = +document.getElementById("quality").value
+
+            let totalTip = document.getElementById("totalTip")
+            let totalCost = document.getElementById("totalCost")
+
+
+            totalTip.innerText = ((billAmount * tipAmount) / 100).toFixed(2);
+            
+            totalCost.innerText = +totalTip.innerText + +billAmount 
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
