@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - Interactive Quiz</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10 min-h-screen flex flex-col items-center">
+
+    <a href="../index.html#chapters" class="text-accent text-sm uppercase tracking-widest border border-accent/50 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors mb-12 self-start">← Back to Index</a>
+
+    <header class="mb-16 text-center">
+        <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-accent">// Mini Project 04</span>
+        <h1 class='font-display text-5xl md:text-7xl text-white mb-4 tracking-tight'>Interactive Quiz</h1>
+        <p class="text-text-secondary max-w-xl mx-auto">A multiple-choice quiz that checks answers and grades the user with dynamic feedback.</p>
+    </header>
+
+    <div class="w-full max-w-md bg-white/5 border border-white/10 rounded-xl p-8 flex flex-col gap-6 shadow-lg shadow-black/50">
+
+        <div>
+            <span class="font-mono text-[10px] text-accent tracking-widest uppercase border border-accent/50 px-2 py-1 rounded inline-block mb-4">Question 01</span>
+            <h4 class="font-display font-black text-2xl text-white tracking-tight">What does DOM stand for in JavaScript?</h4>
+        </div>
+
+        <div class="flex flex-col gap-3">
+
+            <label id="correctBox" for="correct" class="flex items-center gap-3 p-3 border border-white/10 rounded-md cursor-pointer hover:bg-white/5 hover:border-accent transition-colors">
+                <input id="correct" name="q1" type="radio" class="w-4 h-4 cursor-pointer">
+                <span class="text-sm text-text-secondary">Document Object Model</span>
+            </label>
+
+            <label for="wrong1" class="flex items-center gap-3 p-3 border border-white/10 rounded-md cursor-pointer hover:bg-white/5 hover:border-accent transition-colors">
+                <input id="wrong1" name="q1" type="radio" class="w-4 h-4 cursor-pointer">
+                <span class="text-sm text-text-secondary">Digital Output Method</span>
+            </label>
+
+            <label for="wrong2" class="flex items-center gap-3 p-3 border border-white/10 rounded-md cursor-pointer hover:bg-white/5 hover:border-accent transition-colors">
+                <input id="wrong2" name="q1" type="radio" class="w-4 h-4 cursor-pointer">
+                <span class="text-sm text-text-secondary">Data Object Manager</span>
+            </label>
+
+        </div>
+
+        <button onclick="checker()" class="w-full mt-2 bg-accent text-white py-3 rounded-md hover:bg-white hover:text-black transition-all font-bold uppercase tracking-widest text-sm active:scale-95">
+            Submit Answer
+        </button>
+
+        <div class="text-center font-bold text-lg mt-2 h-6">
+            <span id="result"></span>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const correctAnswer = document.getElementById("correct")
+        const wrongAnswer1 = document.getElementById("wrong1")
+        const wrongAnswer2 = document.getElementById("wrong2")
+        const correctBox = document.getElementById("correctBox")
+
+        let result = document.getElementById("result")
+
+        function checker() {
+
+            if (correctAnswer.checked === true) {
+                result.innerText = "your answer is correct"
+                result.style.color = "lime"
+                correctBox.style.border = "2px solid lime"
+
+            } else if (wrongAnswer1.checked === true || wrongAnswer2.checked === true) {
+                result.innerText = "your answer is wrong"
+                result.style.color = "red"
+
+            } else {
+                result.innerText = "please select an answer"
+                result.style.color = "yellow"
+            }
+        }
+
+    </script>
+</body>
+
+</html>
