@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - Task Manager</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10 min-h-screen flex flex-col items-center">
+
+    <a href="../index.html#projects" class="text-accent text-sm uppercase tracking-widest border border-accent/50 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors mb-12 self-start">← Back to Index</a>
+
+    <header class="mb-16 text-center">
+        <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-accent">// Mini Project 05</span>
+        <h1 class='font-display text-5xl md:text-7xl text-white mb-4 tracking-tight'>Task Manager</h1>
+        <p class="text-text-secondary max-w-xl mx-auto">A dynamic to-do list built with DOM injection and parentElement manipulation.</p>
+    </header>
+
+    <div class="w-full max-w-md bg-white/5 border border-white/10 rounded-xl p-6 flex gap-4 mb-6 shadow-lg shadow-black/50">
+        <input id="writeTask" placeholder="What do you need to do?" class="flex-1 bg-white/5 border border-white/10 rounded-md p-3 text-lg focus:outline-none focus:border-accent transition-colors" type="text">
+        <button onclick="addTask(this)" class="bg-accent text-white px-6 py-3 rounded-md hover:bg-white hover:text-black transition-all font-bold uppercase tracking-widest text-sm active:scale-95">Add</button>
+    </div>
+
+    <ul id="parent" class="w-full max-w-md flex flex-col gap-3"></ul>
+
+    <script>
+        const parentUl = document.getElementById("parent")
+
+        function addTask(element) {
+            let taskContent = document.getElementById("writeTask")
+            
+            if (taskContent.value.trim() == "") return;
+
+            let task = "<li class='flex justify-between items-center bg-white/5 border border-white/10 rounded-md p-4 group'>";
+            task += "<h4 class='text-lg text-white'>" + taskContent.value + "</h4>";
+            task += "</li>";
+            
+            parentUl.innerHTML += task
+
+            taskContent.value = ""
+        }
+    </script>
+
+</body>
+
+</html>
