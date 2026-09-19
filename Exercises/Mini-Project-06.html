@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 - Live Counter</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10 min-h-screen flex flex-col items-center">
+
+    <a href="../index.html#projects" class="text-accent text-sm uppercase tracking-widest border border-accent/50 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors mb-12 self-start">← Back to Index</a>
+
+    <header class="mb-16 text-center">
+        <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-accent">// Mini Project 06</span>
+        <h1 class='font-display text-5xl md:text-7xl text-white mb-4 tracking-tight'>Live Counter</h1>
+        <p class="text-text-secondary max-w-xl mx-auto">A real-time character counter that locks submission when the limit is reached.</p>
+    </header>
+
+    <div class="w-full max-w-md bg-white/5 border border-white/10 rounded-xl p-8 flex flex-col gap-6 shadow-lg shadow-black/50 relative">
+
+        <textarea id="input" oninput="counter(this)" placeholder="Type your message here..." class="w-full h-32 bg-white/5 border border-white/10 rounded-md p-4 text-lg focus:outline-none focus:border-[#FF2D8F] transition-colors resize-none"></textarea>
+
+        <div class="flex justify-between items-center text-sm">
+
+            <span class="text-text-secondary">Characters:</span>
+
+            <span>
+                <span id="countDisplay" class="text-accent font-bold">0</span>
+                <span class="text-text-secondary"> / 50</span>
+            </span>
+
+        </div>
+
+        <button id="submitBtn" disabled onclick="submitBtn1(this)" class="cursor-pointer w-full bg-accent text-white py-3 rounded-md hover:bg-white hover:text-black transition-all font-bold uppercase tracking-widest text-sm active:scale-95">
+            Submit
+        </button>
+
+        <div class="w-60 flex justify-end mt-2 absolute -top-15/100 left-85/100">
+            <div id="popUp" class="bg-[#1a1a1a] border-2 border-red-500 text-red-500 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-lg opacity-0 transition-opacity duration-300 pointer-events-none shadow-lg shadow-red-500/20">
+                <span id="popMessage"></span>
+                <span class="absolute -bottom-1.5 left-6 w-3 h-3 bg-[#1a1a1a] border-r-2 border-b-2 border-red-500 rotate-45"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        
+        const popUp = document.getElementById("popUp")
+        const target = document.getElementById("countDisplay")
+        const popMessage = document.getElementById("popMessage")
+        const submitBtn = document.getElementById("submitBtn")
+
+        function counter(element) {
+
+            const input = document.getElementById("input")
+            let inputLength = input.value.length
+
+            target.innerText = inputLength
+
+            if (inputLength > 50) {
+                input.style.border = "2px solid red"
+                popUp.classList.remove("opacity-0")
+                popMessage.innerText = "You passed the character limit!"
+
+                submitBtn.innerText = "Locked"
+                submitBtn.style.backgroundColor = "red"
+                submitBtn.style.cursor = "not-allowed"
+                submitBtn.disabled = true
+                submitBtn.classList.remove("active:scale-95")
+
+            } else if (inputLength > 0 && inputLength < 50) {
+                input.style.border = "2px solid #ffffff1a"
+                popUp.classList.add("opacity-0")
+
+                submitBtn.innerText = "submit"
+                submitBtn.style.backgroundColor = "#FF2D8F"
+                submitBtn.style.cursor = "pointer"
+                submitBtn.disabled = false
+                submitBtn.classList.remove("active:scale-95")
+
+            } else {
+                input.style.border = "2px solid #ffffff1a"
+                popUp.classList.add("opacity-0")
+
+                submitBtn.innerText = "submit"
+                submitBtn.style.backgroundColor = "#FF2D8F"
+                submitBtn.style.cursor = "pointer"
+                submitBtn.disabled = true
+                submitBtn.classList.remove("active:scale-95")
+            }
+        }
+
+        function submitBtn1() {
+            submitBtn.style.backgroundColor = "lime"
+            submitBtn.innerText = "Succeed- Message sent!"
+            document.getElementById("input").value = "";
+            target.innerText = "0";
+
+        }
+    </script>
+</body>
+
+</html>
