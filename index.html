@@ -149,7 +149,7 @@
             <div class="w-full flex flex-col gap-4 reveal reveal-4">
 
                 <!--===== CATEGORY 1 =====-->
-                <div class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent duration-300">
+                <div onclick="showDiv(this)" class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent duration-300">
 
                     <!-- text & button row -->
                     <div class="w-full flex flex-wrap justify-between items-center">
@@ -262,7 +262,7 @@
                 </div>
 
                 <!--=====  CATEGORY 2 =====-->
-                <div class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent duration-300">
+                <div onclick="showDiv(this)" class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent duration-300">
 
                     <!-- text & button row -->
                     <div class="w-full flex flex-wrap justify-between items-center">
@@ -338,7 +338,7 @@
         </section>
 
         <!--==================#2-4 MINI PROJECTS  ==================-->
-        <section id="projects" class="px-6 md:px-10 py-20 md:py-32 max-w-350 mx-auto   ">
+        <section id="projects" class="px-6 md:px-10 py-20 md:py-32 max-w-350 mx-auto">
 
             <!--=======#2-4-1 TEXT  =======-->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b-2 border-bg-secondary pb-6 mb-12 reveal reveal-3">
@@ -520,24 +520,27 @@
 
     <script>
 
-        function showBtn(element) {
 
-            if (element.innerText.toLowerCase() == "show") {
-                element.innerText = "hide";
-            } else {
-                element.innerText = "show";
+        function showDiv(s) {
+
+            const cards = document.querySelectorAll(".cardAc")
+            const open = s.querySelector(".cardAc")
+
+            let wasOpen = open.classList.contains("max-h-[1000px]");
+            console.log(wasOpen);
+
+
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].classList.remove("max-h-[1000px]");
+                cards[i].classList.add("max-h-0");
             }
 
-            const mySamples = element.parentElement.parentElement.querySelector(".cardAc");
-
-            if (mySamples.classList.contains("max-h-0")) {
-                mySamples.classList.remove("max-h-0");
-                mySamples.classList.add("max-h-[1000px]");
-            } else {
-                mySamples.classList.remove("max-h-[1000px]");
-                mySamples.classList.add("max-h-0");
+            if (!wasOpen) {
+                open.classList.remove("max-h-0");
+                open.classList.add("max-h-[1000px]");
             }
         }
+
 
     </script>
 </body>
