@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27 - Filterable Gallery</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10 min-h-screen flex flex-col items-center">
+
+    <!-- Back Link -->
+    <a href="../index.html#projects" class="text-accent text-sm uppercase tracking-widest border /50 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors mb-12 self-start">← Back to Index</a>
+
+    <!-- Semi-Project Header -->
+    <header class="mb-12 text-center">
+        <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-accent">// Mini Project 07</span>
+        <h1 class='font-display text-5xl md:text-7xl text-white mb-4 tracking-tight'>Filter Gallery</h1>
+        <p class="text-text-secondary max-w-xl mx-auto">An interactive image gallery that filters elements using for loops and classList manipulation.</p>
+    </header>
+
+    <!-- Styled Dropdown -->
+    <div class="mb-10 w-full max-w-md">
+        <select name="choice" onchange="viewCategory(this)" id="choice" class="w-full bg-white/5 border border-white/10 rounded-md p-3 text-lg focus:outline-none focus: transition-colors cursor-pointer">
+            <option value="all" class="bg-bg-secondary">All Categories</option>
+            <option value="jungle" class="bg-bg-secondary">Jungle</option>
+            <option value="ocean" class="bg-bg-secondary">Ocean</option>
+            <option value="river" class="bg-bg-secondary">River</option>
+        </select>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div id="parent" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl w-full">
+        
+        <!-- Ocean 1 -->
+        <div class="h-48 border-2  bg-lime-300/50 flex items-center justify-center font-bold box ocean overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/Ocean1.jpg" alt="">
+        </div>
+        <!-- Jungle 1 -->
+        <div class="h-48 border-2  bg-orange-300/50 flex items-center justify-center font-bold box jungle overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/Jungle1.webp" alt="">
+        </div>
+        <!-- River 1 -->
+        <div class="h-48 border-2  bg-blue-300/50 flex items-center justify-center font-bold box river overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/River.avif" alt="">
+        </div>
+        <!-- Ocean 2 -->
+        <div class="h-48 border-2  bg-lime-300/50 flex items-center justify-center font-bold box ocean overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/Ocean2.avif" alt="">
+        </div>
+        <!-- River 2 -->
+        <div class="h-48 border-2  bg-blue-300/50 flex items-center justify-center font-bold box river overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/River2.avif" alt="">
+        </div>
+        <!-- Ocean 3 -->
+        <div class="h-48 border-2  bg-lime-300/50 flex items-center justify-center font-bold box ocean overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/Ocean3.jpg" alt="">
+        </div>
+        <!-- Jungle 2 -->
+        <div class="h-48 border-2  bg-orange-300/50 flex items-center justify-center font-bold box jungle overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/Jungle2.jpg" alt="">
+        </div>
+        <!-- River 3 -->
+        <div class="h-48 border-2  bg-blue-300/50 flex items-center justify-center font-bold box river overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/Ocean3.avif" alt="">
+        </div>
+        <!-- Jungle 3 -->
+        <div class="h-48 border-2  bg-orange-300/50 flex items-center justify-center font-bold box jungle overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover: hover:shadow-lg hover:shadow-accent/20">
+            <img class="w-full h-full object-cover" src="../assets/Images/Jungle3.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        const ocean = document.getElementsByClassName("ocean")
+        const jungle = document.getElementsByClassName("jungle")
+        const river = document.getElementsByClassName("river")
+        const boxes = document.getElementsByClassName("box")
+
+        function viewCategory(element) {
+            let type = element.value
+
+            if (type != "all") {
+                for (let i = 0; i < boxes.length; i++) {
+                    boxes[i].classList.remove("flex")
+                    boxes[i].classList.add("hidden")
+                }
+            } else {
+                for (let i = 0; i < boxes.length; i++) {
+                    boxes[i].classList.remove("hidden")
+                    boxes[i].classList.add("flex")
+                }
+            }
+
+            let passBoxes = document.getElementsByClassName(type)
+
+            for (let r = 0; r < passBoxes.length; r++) {
+                passBoxes[r].classList.add("flex")
+                passBoxes[r].classList.remove("hidden")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
