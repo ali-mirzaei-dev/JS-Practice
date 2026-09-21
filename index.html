@@ -149,7 +149,7 @@
             <div class="w-full flex flex-col gap-4 reveal reveal-4">
 
                 <!--===== CATEGORY 1 =====-->
-                <div onclick="showDiv(this)" class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent duration-300">
+                <div onclick="showDiv(this)" class="cursor-pointer w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent duration-300">
 
                     <!-- text & button row -->
                     <div class="w-full flex flex-wrap justify-between items-center">
@@ -157,7 +157,7 @@
                             <h4 class="font-display font-black text-xl text-bg-secondary tracking-tight">Basic Algorithms</h4>
                             <span class="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Date: 10-11 Sep</span>
                         </div>
-                        <button onclick="showBtn(this)" class="cursor-pointer font-mono text-[10px] uppercase tracking-widest text-text-secondary hover:text-accent border border-text-secondary/30 hover:border-accent px-7 py-1 rounded-full duration-300 select-none">show</button>
+                        <span class="view font-mono text-[10px] uppercase tracking-widest text-text-secondary hover:text-accent border border-text-secondary/30 hover:border-accent px-7 py-1 rounded-full duration-300 select-none">show</span>
                     </div>
 
                     <!-- cards -->
@@ -262,7 +262,7 @@
                 </div>
 
                 <!--=====  CATEGORY 2 =====-->
-                <div onclick="showDiv(this)" class="w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent duration-300">
+                <div onclick="showDiv(this)" class="cursor-pointer w-full flex flex-col border border-text-secondary/20 rounded-lg p-4 hover:border-accent duration-300">
 
                     <!-- text & button row -->
                     <div class="w-full flex flex-wrap justify-between items-center">
@@ -270,7 +270,7 @@
                             <h4 class="font-display font-black text-xl text-bg-secondary tracking-tight">DOM Manipulation</h4>
                             <span class="font-mono text-[10px] text-text-secondary uppercase tracking-widest">Date: 12-15 Sep</span>
                         </div>
-                        <button onclick="showBtn(this)" class="cursor-pointer font-mono text-[10px] uppercase tracking-widest text-text-secondary hover:text-accent border border-text-secondary/30 hover:border-accent px-7 py-1 rounded-full duration-300 select-none">show</button>
+                        <span class="view font-mono text-[10px] uppercase tracking-widest text-text-secondary hover:text-accent border border-text-secondary/30 hover:border-accent px-7 py-1 rounded-full duration-300 select-none">show</span>
                     </div>
 
                     <!-- cards -->
@@ -536,28 +536,28 @@
 
     <script>
 
-
         function showDiv(s) {
 
             const cards = document.querySelectorAll(".cardAc")
+            const allView = document.getElementsByClassName("view")
             const open = s.querySelector(".cardAc")
-
+            const view = s.querySelector("div:nth-of-type(1)>span.view")
+            
             let wasOpen = open.classList.contains("max-h-[1000px]");
-
+            
             for (let i = 0; i < cards.length; i++) {
                 cards[i].classList.remove("max-h-[1000px]");
                 cards[i].classList.add("max-h-0");
+                allView[i].innerText = "Show"
             }
 
             if (!wasOpen) {
                 open.classList.remove("max-h-0");
                 open.classList.add("max-h-[1000px]");
+                view.innerText = "Hide"
             }
         }
-
-
     </script>
 </body>
-
 
 </html>
