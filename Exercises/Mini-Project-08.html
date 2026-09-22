@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28 - Pricing Table</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+
+    <style>
+        /* The Active State Class */
+        .active {
+            background-color: #1a1a1a;
+            border-color: #FF2D8F !important;
+        }
+
+        .active h2 {
+            color: #ffffff;
+        }
+
+        .active .price {
+            color: #FF2D8F;
+        }
+    </style>
+</head>
+
+<body class="bg-bg-secondary text-white font-mono p-10 min-h-screen flex flex-col items-center">
+
+    <!-- Back Link -->
+    <a href="../index.html#projects" class="text-accent text-sm uppercase tracking-widest border border-accent/50 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors mb-12 self-start">← Back to Index</a>
+
+    <!-- Semi-Project Header -->
+    <header class="mb-16 text-center">
+        <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-accent">// Mini Project 08</span>
+        <h1 class='font-display text-5xl md:text-7xl text-white mb-4 tracking-tight'>Pricing Table</h1>
+        <p class="text-text-secondary max-w-xl mx-auto">Interactive pricing cards with a selected state toggled via DOM loops.</p>
+    </header>
+
+    <!-- Pricing Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
+
+        <!-- Card 1 -->
+        <div class="bg-white/5 border border-white/10 rounded-xl p-8 flex flex-col gap-4 shadow-lg shadow-black/50 transition-all duration-300 cards">
+            <h2 class="font-display font-black text-2xl text-text-secondary tracking-tight transition-colors">Basic</h2>
+            <p class="price font-display font-black text-4xl text-white transition-colors">$9<span class="text-lg text-text-secondary font-mono">/mo</span></p>
+            <p class="text-sm text-text-secondary leading-relaxed flex-1">Perfect for individuals learning the ropes of frontend development.</p>
+            <button onclick="selectPlan(this)" class="w-full mt-4 bg-white/10 border border-white/10 text-white py-3 rounded-md hover:bg-accent hover:border-accent hover:text-white transition-all font-bold uppercase tracking-widest text-sm active:scale-95 cursor-pointer">
+                Select
+            </button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white/5 border border-white/10 rounded-xl p-8 flex flex-col gap-4 shadow-lg shadow-black/50 transition-all duration-300 cards">
+            <h2 class="font-display font-black text-2xl text-text-secondary tracking-tight transition-colors">Pro</h2>
+            <p class="price font-display font-black text-4xl text-white transition-colors">$29<span class="text-lg text-text-secondary font-mono">/mo</span></p>
+            <p class="text-sm text-text-secondary leading-relaxed flex-1">For freelance developers who need advanced DOM manipulation tools.</p>
+            <button onclick="selectPlan(this)" class="w-full mt-4 bg-white/10 border border-white/10 text-white py-3 rounded-md hover:bg-accent hover:border-accent hover:text-white transition-all font-bold uppercase tracking-widest text-sm active:scale-95 cursor-pointer">
+                Select
+            </button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white/5 border border-white/10 rounded-xl p-8 flex flex-col gap-4 shadow-lg shadow-black/50 transition-all duration-300 cards">
+            <h2 class="font-display font-black text-2xl text-text-secondary tracking-tight transition-colors">Enterprise</h2>
+            <p class="price font-display font-black text-4xl text-white transition-colors">$99<span class="text-lg text-text-secondary font-mono">/mo</span></p>
+            <p class="text-sm text-text-secondary leading-relaxed flex-1">Dedicated support and custom architecture for large dev teams.</p>
+            <button onclick="selectPlan(this)" class="w-full mt-4 bg-white/10 border border-white/10 text-white py-3 rounded-md hover:bg-accent hover:border-accent hover:text-white transition-all font-bold uppercase tracking-widest text-sm active:scale-95 cursor-pointer">
+                Select
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+
+        const cards = document.getElementsByClassName("cards")
+        
+
+        function selectPlan(element) {
+            const userSelect = element.parentElement
+
+            for (i = 0; i < cards.length; i++) {
+                cards[i].classList.remove("active")
+            }
+
+            userSelect.classList.add("active")
+        }
+    </script>
+</body>
+
+</html>
