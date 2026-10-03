@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 - Modern Toggle</title>
+    <link rel="stylesheet" href="../assets/StyleSheet/output.css">
+
+    <style>
+        body {
+            background-color: #F9F8F6;
+            color: #1F150C;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .dark-mode {
+            background-color: #1a0a0e;
+            color: #F9F8F6;
+        }
+
+        .glass-card {
+            background-color: rgba(239, 233, 227, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 181, 156, 0.3);
+            box-shadow: 0 10px 40px rgba(31, 21, 12, 0.05);
+            transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .dark-mode .glass-card {
+            background-color: rgba(31, 21, 12, 0.6);
+            border: 1px solid rgba(201, 181, 156, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode h1,
+        .dark-mode h2 {
+            color: #F9F8F6;
+        }
+
+        .dark-mode p {
+            color: #a89090;
+        }
+    </style>
+</head>
+
+<body class="font-sans p-10 min-h-screen flex flex-col items-center">
+
+    <!-- Back Link -->
+    <a href="../index.html#projects" class="text-[#C9B59C] text-sm uppercase tracking-widest border border-[#C9B59C] px-3 py-1.5 rounded-full hover:bg-[#C9B59C] hover:text-[#F9F8F6] transition-colors mb-12 self-start">← Back to Index</a>
+
+    <!-- Header -->
+    <header class="mb-12 text-center">
+        <span class="font-mono text-[11px] tracking-[0.2em] uppercase block mb-4 text-[#C9B59C]">// Practice 09</span>
+        <h1 class='font-display font-black text-5xl md:text-7xl mb-4 tracking-tight'>Modern Toggle</h1>
+        <p class="max-w-xl mx-auto opacity-80">A dark mode toggle built with modern addEventListener and arrow functions.</p>
+    </header>
+
+    <!-- Glass Card -->
+    <div class="glass-card rounded-2xl p-10 max-w-lg w-full flex flex-col items-center text-center gap-6 mt-8">
+
+        <h2 class="font-display font-black text-3xl tracking-tight">Click to Change Mode</h2>
+
+        <p class="text-base max-w-sm opacity-80 leading-relaxed">
+            This button uses <span class="text-[#C9B59C] font-bold">addEventListener</span> instead of inline onclick, and an <span class="text-[#C9B59C] font-bold">arrow function</span> for the logic.
+        </p>
+
+        <button id="modeBtn" class="mt-2 bg-[#1F150C] text-[#F9F8F6] px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-[#C9B59C] transition-all active:scale-95 cursor-pointer">
+            Change Mode
+        </button>
+
+    </div>
+
+    <script>
+        const modeBtn = document.getElementById("modeBtn");
+
+        modeBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+
+    </script>
+
+</body>
+
+</html>
